@@ -1,0 +1,542 @@
+/*
+*
+*    Author:    Michael Raffaele <michael@mraffaele.com>
+*    Date:    25th October 2011
+*    Info:     http://www.mraffaele.com/blog/2011/10/25/css-accordion-no-javascript/
+*
+*/
+
+/* Shared for all accordion types */
+
+
+/* OVERALL ACCORDION OVERALL ACCORDION */
+
+.top-portion {
+    height: 57.307vh;
+    background: #0182B8;
+    position: relative;
+    color: white;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.top-spacer {
+    height: 20vh;
+}
+
+.accordion {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 100%;
+    background: #fff;
+}
+
+.overall-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-items {
+    margin: 0;
+    padding: 0;
+}
+
+.accordion [type=radio],
+.accordion [type=checkbox] {
+    display: none;
+}
+
+.accordion label {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+}
+
+.label1 {
+    background: #3074BE;
+    height: 4.011vh;
+}
+
+.label2 {
+    background: #B974B6;
+    height: 4.011vh;
+}
+
+.label3 {
+    background: #FF7AA8;
+    height: 17.192vh;
+}
+
+.accordion .content {
+    overflow: hidden;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+}
+
+.vertical ul li {
+    overflow: hidden;
+}
+
+.vertical ul li label {
+    padding: 10px;
+}
+
+.vertical [type=radio]:checked~label,
+.vertical [type=checkbox]:checked~label {
+    border-bottom: 0;
+    height: 4.011vh;
+    /* color: white; */
+}
+
+.vertical ul li label:hover {
+    border: none;
+    color: white;
+}
+
+.vertical ul li .content {
+    height: 0px;
+    border-top: 0;
+}
+
+#first-label [type=radio]:checked~label~.content,
+#first-label [type=checkbox]:checked~label~.content {
+    height: auto;
+    /* border: 1px solid #542437; */
+    background-color: #3074BE;
+    overflow: scroll;
+    /* Will need to individualize the sections and change their colors */
+    /* overflow: scroll; */
+
+}
+
+#second-label [type=radio]:checked~label~.content,
+#second-label [type=checkbox]:checked~label~.content {
+    height: auto;
+    background-color: #B974B6;
+    overflow: scroll;
+    /* overflow: scroll; */
+}
+
+#third-label [type=radio]:checked~label~.content,
+#third-label [type=checkbox]:checked~label~.content {
+    height: auto;
+    background-color: #FF7AA8;
+    overflow: scroll;
+    /* overflow: scroll; */
+}
+
+
+/* OTHER PORTIONS */
+
+.fifth-portion {
+    background: #FFAFB0;
+    height: 15.759vh;
+}
+
+.sixth-portion {
+    background: #FDDBC9;
+    height: 40.831vh;
+}
+
+.seventh-portion {
+    background: #FFEDE0;
+    height: 39.971vh;
+}
+
+.eighth-portion {
+    background: #FFFFFF;
+    height: 26.934;
+}
+
+
+/* JAKE APP JAKE APP JAKE APP */
+#jake-pic {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25%;
+}
+
+.top-jakepic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 30vh;
+}
+
+.question {
+    text-align: center;
+    background-image: url("background3.png");
+    border-radius: 10px;
+    width: 60vw;
+    height: 25vh;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.actual_question {
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: white;
+    padding: 1vh;
+    border: 1px solid white;
+    border-radius: 10%;
+}
+
+.bottom-container {
+    padding: 10vh;
+}
+
+.score {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+    font-size: 3vw;
+    color: white;
+}
+
+.answers-container {
+    margin: .2rem;
+    display: grid;
+    grid-template-columns: .2fr 2fr;
+    grid-template-rows: .1fr .1fr .1fr;
+    grid-gap: 3px 3px;
+    /* height: 30vh; */
+    padding-bottom: 3vh;
+}
+
+#answer_0 {
+    font-size: 2.2vh;
+}
+
+#answer_1 {
+    font-size: 2.2vh;
+}
+
+#answer_2 {
+    font-size: 2.2vh;
+}
+
+#first-button {
+    grid-row: 1;
+    grid-column: 1/3;
+}
+
+#second-button {
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+#third-button {
+    grid-row: 3;
+    grid-column: 1/3;
+}
+
+.select_answer {
+    /* display: inline-block; */
+    font-size: 2vh;
+    font-weight: bold;
+    text-align: center;
+    height: 5vh;
+    width: 12vw;
+    text-align: center;
+    text-decoration: none;
+    color:#B974B6;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.select_answer:hover {
+    background-color: #B974B6;
+    color: white;
+}
+
+
+.blankheader {
+    height: 5vh;
+}
+
+.jake-app {
+    height: 50%;
+}
+
+.mult-choice {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #B974B6;
+    cursor: pointer;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10%;
+}
+
+.active,
+.mult-choice:hover {
+    background-color: white;
+    color: #B974B6;
+}
+
+/* South Bend Stories */
+
+.south-bend-stories {
+    /* overflow: scroll; */
+    padding-bottom: 20px;
+}
+
+#article-block {
+    height: 90%;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: rgb(107, 147, 189);
+    overflow-y: scroll;
+}
+
+#article {
+    padding: 20px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#article-picture-1 {
+    float: left;
+    height: 30vh;
+    padding: 10px;
+}
+
+#article-picture-2 {
+    float: right;
+    height: 30vh;
+    padding: 10px;
+}
+
+#title {
+    background-color: #3074BE;
+    padding: 10px 10px 7px 10px;
+    height: 4vh;
+    border-radius: 20px;
+}
+
+.sbstories-buttons-containers {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.sbstories-btn {
+    border-radius: 10px;
+    height: 5vh;
+    width: 7vw;
+    background-color: white;
+    color: #3074BE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2vh;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.sbstories-btn:hover {
+    background-color: #3074BE;
+    color: white;
+    border-color: white;
+}
+
+#sbstories-back-btn1 {
+    float: left;
+}
+
+#sbstories-back-btn2 {
+    float: left;
+}
+
+#sbstories-next-btn1 {
+    float: right;
+}
+
+#sbstories-next-btn2 {
+    float: right;
+}
+
+
+/* DM APP DM APP DM APP DM APP */
+
+.top-inventi {
+    padding-top: 1vh;
+}
+
+.DMpic {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25%;
+    display: block;
+    max-height: 35vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Bottom Portion */
+.bottom-inventi {
+    margin: auto;
+    width: 70%;
+    padding-top: 3vh;
+}
+
+/* Term Generator */
+
+#term-instructions {
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#term-generator {
+    /* margin: .2rem; */
+    display: grid;
+    grid-template-columns: .45fr .1fr .45fr;
+    grid-template-rows: .5fr;
+    /* grid-gap: 3px; */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#term1 {
+    grid-row: 1;
+    grid-column: 1/1;
+    text-align: right;
+}
+
+#joiner {
+    grid-row: 1;
+    grid-column: 2/2;
+    text-align: center;
+}
+
+#term2 {
+    grid-row: 1;
+    grid-column: 3/3;
+    text-align: left;
+}
+
+.terms-given {
+    text-align: center;
+    font-size: 3vw;
+
+}
+
+
+/* Submission */
+
+#submission {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#open-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 40vh;
+    height: 12vh;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);
+    background-color: #B974B6;
+    border-color: #B974B6 #B974B6 #B974B6;
+    border-image: none;
+    border-radius: 6px 6px 6px 6px;
+    border-style: none solid solid none;
+    border-width: medium 1px 1px medium;
+    box-shadow: 0 1px 2px 3px rgba(0, 0, 0, 0.12) inset;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.4em;
+    padding: 5px 8px;
+    transition: background-color 0.2s ease 0s;
+}
+
+::placeholder {
+    color: #FF7AA8;
+}
+
+#open-form:focus {
+    background: none repeat scroll 0 0 #FF7AA8;
+    outline-width: 0;
+    border-color: -moz-use-text-color #FF7AA8 #FF7AA8 -moz-use-text-color;
+    border-color: #FF7AA8;
+}
+
+#idea-submit-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: .1em solid #FFFFFF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FF7AA8;
+    text-align: center;
+    transition: all 0.2s;
+    height: 6vh;
+    width: 12vh;
+    background-color: white;
+    font-size: 2vh;
+}
+
+
+
+#idea-submit-btn:hover {
+    color: white;
+    background-color: #FF7AA8;
+}
+
+.submission-btn {
+    padding-top: 3vh;
+}
+
+.final-inventi {
+    height: 20vh;
+}
+
+#last-message {
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    margin: auto;
+}
+
+#lastest-message {
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+#bottom-area {
+    height: 5vh;
+}
