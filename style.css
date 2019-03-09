@@ -157,6 +157,17 @@
     height: 26.934;
 }
 
+#secret-pic {
+    background: #FDDBC9;
+    height: 30vh;
+    cursor: pointer;
+    width: 20vw;
+    float: right;
+}
+
+#secret-pic-1 {
+    height: 30vh;
+}
 
 /* JAKE APP JAKE APP JAKE APP */
 #jake-pic {
@@ -506,6 +517,7 @@
     width: 12vh;
     background-color: white;
     font-size: 2vh;
+    cursor: pointer;
 }
 
 
