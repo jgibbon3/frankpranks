@@ -39,7 +39,7 @@ var UIDMController = (function () {
 
         changePic: function (picNum) {
 
-            document.getElementById(DOMstrings.dmPic).src = 'images/dm-' + picNum + '.png';
+            document.getElementById(DOMstrings.dmPic).src = 'dm-' + picNum + '.png';
 
         },
 

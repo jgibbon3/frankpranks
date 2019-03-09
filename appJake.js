@@ -35,7 +35,7 @@ var UIController = (function () {
 
         changePic: function (picNum) {
 
-            document.getElementById(DOMstrings.jakePic).src = 'images/jake-' + picNum + '.png';
+            document.getElementById(DOMstrings.jakePic).src = 'jake-' + picNum + '.png';
 
         },
 
@@ -63,11 +63,11 @@ var UIController = (function () {
             if (result) {
 
                 newHtml = newHtml.replace('%correct%', 'Right!!!');
-                document.getElementById(DOMstrings.jakePic).src = 'images/jake-' + pictures[picNum] + '-right.png';
+                document.getElementById(DOMstrings.jakePic).src = 'jake-' + pictures[picNum] + '-right.png';
 
             } else {
                 newHtml = newHtml.replace('%correct%', 'Wrong:-\(');
-                document.getElementById(DOMstrings.jakePic).src = 'images/jake-' + pictures[picNum] + '-wrong.png';
+                document.getElementById(DOMstrings.jakePic).src = 'jake-' + pictures[picNum] + '-wrong.png';
             }
 
             document.querySelector(DOMstrings.jakeQContainer).innerHTML = newHtml;
@@ -189,7 +189,7 @@ var controller = (function (UICtrl, qCtrl) {
         document.querySelector(DOMstrings.jakeSelectAnswer).addEventListener('click', triedAnswer);
 
         document.getElementById('secret-pic').addEventListener('click', function() {
-            document.getElementById('secret-pic').innerHTML = '<img src="images/secret-pic.png" id="secret-pic-1">';
+            document.getElementById('secret-pic').innerHTML = '<img src="secret-pic.png" id="secret-pic-1">';
         });
 
     };
@@ -241,7 +241,7 @@ var controller = (function (UICtrl, qCtrl) {
 
             percentage = Math.round(((score / totalQ) * 100)) + '%';
 
-            document.getElementById(DOMstrings.jakePic).src = 'images/Picture2.png';
+            document.getElementById(DOMstrings.jakePic).src = 'Picture2.png';
             html = '<div class="score"><h3 id="score_report">Final Score = %score%</h3><h4>%percentage%</h4></div>';
             newHtml = html.replace('%score%', score);
             newHtml = newHtml.replace('%percentage%', percentage);
